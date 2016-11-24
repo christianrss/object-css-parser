@@ -17,9 +17,8 @@
             var css_properties = String();
             for (var prop in properties) {
                 css_properties = css_properties.concat(
-                    typeof properties[ prop ] === "object" && parseClass( prop, properties[ prop ] ) || String().concat( prop, " : ", properties[ prop ] )
-                    ,
-                    typeof properties[ prop ] !== "object" && ";" || ""
+                    typeof properties[ prop ] === "object" && parseClass( prop, properties[ prop ] ) || String().concat( prop, " : ", properties[ prop ] ),
+                    typeof properties[ prop ] === "object" && "" || ";"
                 );
             }
             return css_properties;
