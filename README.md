@@ -5,6 +5,7 @@ A little recursive parser of JS Object to CSS String in JavaScript
 /* 
     MIT License
     Copyright (c) 2016 Christian Rafael
+    JS Object to CSS String Parser
     christian@paradix.com.br
 */
 function parseCSS( object_css ) {
@@ -71,4 +72,9 @@ var css_string = parseCSS( object_css );
 /* will return: */
 @-webkit-keyframes uil-default-anim { 0% { opacity : 1; } 100% { opacity : 0; }  } @keyframes uil-default-anim { 0% { opacity : 1; } 100% { opacity : 0; }  } .uil-default-css { position : relative;background : none;width : 200px;height : 200px;top : calc(50% - 200px/2);margin-left : auto;margin-right : auto; } .uil-default-css > div:nth-of-type(1) { -webkit-animation : uil-default-anim 1s linear infinite;animation : uil-default-anim 1s linear infinite;-webkit-animation-delay : -0.48s;animation-delay : -0.48s; } 
 
+```
+## With jQuery
+```javascript
+var css_string = $.parseCSS( object_css );
+var css_string = $( object_css ).parseCSS();
 ```
