@@ -1,6 +1,7 @@
 /* 
     MIT License
     Copyright (c) 2016 Christian Rafael
+    JS Object to CSS String Parser
     christian@paradix.com.br
 */
 function parseCSS( object_css ) {
