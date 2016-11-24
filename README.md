@@ -2,32 +2,32 @@
 A little recursive parser of object css to text css in JavaScript
 
 ```javascript
-    /* 
-        MIT License
-        Copyright (c) 2016 Christian Rafael
-        christian@paradix.com.br
-    */
-    function parseCSS( object_css ) {
-        function parseClass( _class, properties ) {
-            return String().concat( _class, " { ", parseProperties( properties ), " } " );
-        }
-        function parseProperties( properties ) {
-            var css_properties = String();
-            for (var prop in properties) {
-                css_properties = css_properties.concat(
-                    typeof properties[ prop ] === "object" && parseClass( prop, properties[ prop ] ) || String().concat( prop, " : ", properties[ prop ] )
-                    ,
-                    typeof properties[ prop ] !== "object" && ";" || ""
-                );
-            }
-            return css_properties;
-        }
-        var css_str = String();
-        for ( var _class in object_css ) {
-            css_str = css_str.concat( parseClass( _class, object_css[ _class ] ) );
-        }
-        return css_str;
+/* 
+    MIT License
+    Copyright (c) 2016 Christian Rafael
+    christian@paradix.com.br
+*/
+function parseCSS( object_css ) {
+    function parseClass( _class, properties ) {
+        return String().concat( _class, " { ", parseProperties( properties ), " } " );
     }
+    function parseProperties( properties ) {
+        var css_properties = String();
+        for (var prop in properties) {
+            css_properties = css_properties.concat(
+                typeof properties[ prop ] === "object" && parseClass( prop, properties[ prop ] ) || String().concat( prop, " : ", properties[ prop ] )
+                ,
+                typeof properties[ prop ] !== "object" && ";" || ""
+            );
+        }
+        return css_properties;
+    }
+    var css_str = String();
+    for ( var _class in object_css ) {
+        css_str = css_str.concat( parseClass( _class, object_css[ _class ] ) );
+    }
+    return css_str;
+}
 ```
 ## Example:
 ```javascript
