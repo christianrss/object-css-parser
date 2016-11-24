@@ -7,8 +7,8 @@
 ( function( $ ) {
 
     var parseCSS = function parseCSS( object_css ) {
-        if (typeof object_css === "undefined" &&typeof $(this)[0] === "object") {
-            object_css = $(this)[0];
+        if ( typeof object_css === "undefined" &&typeof $( this )[ 0 ] === "object" ) {
+            object_css = $( this )[ 0 ];
         }
         function parseClass( _class, properties ) {
             return String().concat( _class, " { ", parseProperties( properties ), " } " );
